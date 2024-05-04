@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* load some fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+input {
+	@apply appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md  transition duration-150 ;
+}
+
+label {
+	@apply block text-sm font-medium leading-5 text-gray-700;
+}
+.btn {
+	@apply w-full flex justify-center py-2 px-2 border border-transparent text-sm font-bold rounded-md text-white bg-teal-500;
+}
