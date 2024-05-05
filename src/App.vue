@@ -1,40 +1,48 @@
 <template>
   <div id="app">
-    <v-app-bar color="#143cdb" height="100px" dark>
+    <v-app-bar
+    dark
+    color="#143cdb"
+    height="100px"
+    >
         <router-link to="/">
             <img src="@/assets/images/logo.svg" style="width: 150px"/>
         </router-link>
         <v-spacer></v-spacer>
         <v-spacer></v-spacer>
-        <div v-if="user" class="flex items-center">
+        <div class="flex">
             <router-link to="/dashboard" class="menu-item ml-6">Home</router-link>
             <router-link to="/group-predictions" class="menu-item ml-6">Predictions</router-link>
             <router-link to="/leaderboard" class="menu-item ml-6">Leaderboard</router-link>
-        </div>
-        
+        </div>       
 
         <v-spacer></v-spacer>
 
         <div>
             <div v-if="user" class="flex items-center">
                 <p>Hi, {{ user.name }}</p>
-                <div class="btn ml-6" style="cursor: pointer; background: #F4D03F; color: #333; width: 100px;" @click="logout()" v-if="isLogged">Logout</div>
+                <v-btn color="#F4D03F" width="120px" @click="logout()" v-if="isLogged">
+                    <span style="color: #333;">Logout</span>
+                </v-btn>
             </div>
             <div v-else class="flex items-center">
                 <router-link to="/login">Login</router-link>
-                <router-link to="/register" class="btn ml-4" style="background: #F4D03F; color: #333" v-if="!isLogged">Register</router-link>
+                <v-btn color="#F4D03F" width="120px">
+                    <router-link to="/register" style="color: #333;" v-if="!isLogged">Register</router-link>
+                </v-btn>
+                
             </div>
         </div>
     </v-app-bar>
-    <v-app-bar flat color="#fff">
+    <v-app-bar flat color="#fff" height="60" dense>
         <v-spacer></v-spacer>      
-      <div
-      v-for="team in teams"
-      :key="team.id"
-      >
-        <v-img :src="getImagePath(team.Image)" width="30" style="margin: 10px"></v-img>
-      </div>
-      <v-spacer></v-spacer>
+        <div
+        v-for="team in teams"
+        :key="team.id"
+        >
+            <v-img :src="getImagePath(team.Image)" width="30" style="margin-left: 10px"></v-img>
+        </div>
+        <v-spacer></v-spacer>
     </v-app-bar>
 
     <v-main style="height: 100%; background-color: #f5f5f5">
@@ -93,4 +101,12 @@
         border-bottom: 1px solid #fff;
     }
 }
+
+a{
+    text-decoration: none;
+    color: #fff;
+    margin: 0 30px;
+}
+
+
 </style>

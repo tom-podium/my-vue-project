@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-card
-      class="mx-auto"
+      style="margin: auto"
       max-width="400"
     >
       <v-card flat outlined dark color="#143cdb" v-if="stepper">
@@ -18,14 +18,14 @@
               step="1"
               @click="e6 = 1"
             >
-              <p class="ml-2">Group Fixtures</p>
-              <small class="ml-2">Predict the score of each of the group fixtures along with an anytime goalscorer</small>
+              <p style="margin-left: 2%;">Group Fixtures</p>
+              <small style="margin-left: 2%;">Predict the score of each of the group fixtures along with an anytime goalscorer</small>
             </v-stepper-step>
 
             <v-stepper-content step="1">
               <v-card
                 color="grey lighten-1"
-                class="mb-12"
+                style="margin-bottom: 10%"
                 height="200px"
               ></v-card>
               <v-btn
@@ -41,14 +41,14 @@
               step="2"
               @click="e6 = 2"
             >
-              <p class="ml-2">Group Outrights</p>
-              <small class="ml-2">Predict where each team will finish in the group as well as some group statistics such as number of goals and red cards</small>
+              <p style="margin-left: 2%;">Group Outrights</p>
+              <small style="margin-left: 2%;">Predict where each team will finish in the group as well as some group statistics such as number of goals and red cards</small>
             </v-stepper-step>
 
             <v-stepper-content step="2">
               <v-card
                 color="grey lighten-1"
-                class="mb-12"
+                style="margin-bottom: 10%"
                 height="200px"
               ></v-card>
               <v-btn
@@ -64,14 +64,14 @@
               step="3"
               @click="e6 = 3"
             >
-              <p class="ml-2">Tournament Outrights</p>
-              <small class="ml-2">Select the tournament outright predictions such as winner, runner up and golden boot</small>
+              <p style="margin-left: 2%;">Tournament Outrights</p>
+              <small style="margin-left: 2%;">Select the tournament outright predictions such as winner, runner up and golden boot</small>
             </v-stepper-step>
 
             <v-stepper-content step="3">
               <v-card
                 color="grey lighten-1"
-                class="mb-12"
+                style="margin-bottom: 10%"
                 height="200px"
               ></v-card>
               <v-btn
@@ -83,13 +83,13 @@
             </v-stepper-content>
 
             <v-stepper-step step="4" @click="e6 = 4">
-              <p class="ml-2">Scoring</p>
-              <small class="ml-2">Find out how the scoring works</small>
+              <p style="margin-left: 2%;">Scoring</p>
+              <small style="margin-left: 2%;">Find out how the scoring works</small>
             </v-stepper-step>
             <v-stepper-content step="4">
               <v-card
                 color="grey lighten-1"
-                class="mb-12"
+                style="margin-bottom: 10%"
                 height="200px"
               ></v-card>
               <v-btn
@@ -111,7 +111,7 @@
         
       </v-card-title>
 
-      <v-card-text class="pt-4">
+      <v-card-text>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi nobis a at voluptates culpa optio amet! Inventore deserunt voluptatem maxime a veniam placeat, eos impedit nulla quos? Officiis, aperiam ducimus.
       </v-card-text>    
     </v-card>
@@ -124,7 +124,7 @@
         cols="12"
         md="6"
         lg="4"
-        class="my-5 px-2"
+        style="margin-top: 2%; padding-left: 1%; padding-right: 1%"
       >
         <v-card outlined>
           <v-app-bar color="#1f2369" dark dense flat>
@@ -133,33 +133,33 @@
             {{ formatDateTimeDisplay(item.FixtureTime) }}
           </v-app-bar>
           <v-card-text>
-            <v-row class="mb-6">
-              <v-col cols="4" class="text-right">
-                <v-row justify="end">
+            <v-row style="margin-bottom: 5%">
+              <v-col cols="4" style="text-align: right; margin-top: 4%;">
+                <v-row style="justify-content: end;">
                   <v-col cols="auto">
-                    <v-img :src="getImagePath(teams.find(team => team.id == item.HomeTeam).Image)" width="40" class="mb-2 mt-4"></v-img>
+                    <v-img :src="getImagePath(teams.find(team => team.id == item.HomeTeam).Image)" width="40" style="margin-left: 15px; margin-top: -3px"></v-img>
                   </v-col>
                 </v-row>                
                 <span><strong>{{ getTeamName(item.HomeTeam) }}</strong></span>
               </v-col>
-              <v-col cols="2" class="pt-5">
-                <div class="input-container mx-auto">
+              <v-col cols="2" style="padding-top: 4%">
+                <div class="input-container" style="margin: auto">
                   <div class="arrow-up" @click="increment(item.id)"></div>
                   <input type="number" class="number-input" v-model.number="user.GroupPredictions[item.id].homeTeamScore" />
                   <div class="arrow-down" @click="decrement(item.id)"></div>
                 </div>
               </v-col>
-              <v-col cols="2" class="pt-5">
-                <div class="input-container mx-auto">
+              <v-col cols="2" style="padding-top: 4%">
+                <div class="input-container" style="margin: auto">
                   <div class="arrow-up" @click="incrementAway(item.id)"></div>
                   <input type="number" class="number-input" v-model.number="user.GroupPredictions[item.id].awayTeamScore" />
                   <div class="arrow-down" @click="decrementAway(item.id)"></div>
                 </div>
               </v-col>
-              <v-col cols="4" class="text-left">
+              <v-col cols="4" class="text-left" style="margin-top: 4%">
                 <v-row justify="start">
                   <v-col cols="auto">
-                    <v-img :src="getImagePath(teams.find(team => team.id == item.AwayTeam).Image)" width="40" class="mb-2 mt-4"></v-img>
+                    <v-img :src="getImagePath(teams.find(team => team.id == item.AwayTeam).Image)" width="40" style="margin-left: 2px; margin-top: -3px"></v-img>
                   </v-col>
                 </v-row>
                 <span><strong>{{ getTeamName(item.AwayTeam) }}</strong></span>
@@ -167,8 +167,8 @@
             </v-row>
 
             <hr>
-            <v-row class="my-4 mx-1">
-              <label for="goalscore">Anytime Goalscorer</label>
+            <v-row class="my-4 mx-1" style="margin-top: 4%; margin-bottom: 4%; margin-left: 2%; margin-right: 2%">
+              <label for="goalscore"><strong>Anytime Goalscorer</strong></label>
               <select 
                 name="goalscorer" 
                 id="goalscorer"
@@ -188,7 +188,7 @@
       </v-col>
     </v-row>
 
-    <v-card-actions class="mt-10">
+    <v-card-actions style="margin-top: 5%; margin-bottom: 5%">
         <v-btn 
         block 
         dark 
