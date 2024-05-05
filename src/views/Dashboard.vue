@@ -365,6 +365,15 @@
             getImagePath(imageName) {
                 return require('@/assets/images/' + imageName);
             },
-        }
+            /* scoreUsers() {
+                this.$store.dispatch('scoreUsers')
+            } */
+        },
+        created() {
+            this.$store.dispatch('getFixtures')
+        },
+        /* mounted: function() {
+            this.scoreUsers();
+        } */
     }
 </script>

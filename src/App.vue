@@ -72,10 +72,7 @@
         },
         getImagePath(imageName) {
             return require('@/assets/images/' + imageName);
-        },
-        /* scoreUsers() {
-            this.$store.dispatch('scoreUsers')
-        } */
+        }
     },
 
     created() {
@@ -83,10 +80,6 @@
         /* this.$store.dispatch('getFixtures') */
         this.$store.dispatch('getPlayers')
     },
-
-    /* mounted: function() {
-        this.scoreUsers();
-    } */
   }
 </script>
 

@@ -12,8 +12,8 @@ axios.defaults.baseURL = "https://x8ki-letl-twmt.n7.xano.io/api:e7YHNPxg"
 
 export default new Vuex.Store({
   state: {
-    user: null,
-    token: null,
+    user: JSON.parse(localStorage.getItem('user')) || null,
+    token: JSON.parse(localStorage.getItem('token')) || null,
     users: null,
     teams: null,
     fixtures: null,
@@ -98,7 +98,7 @@ export default new Vuex.Store({
             goalscorer: null,
           };
         });
-
+        console.log(state.user)
         // Directly assign the new object to state.groupPredictions
         state.user.GroupPredictions = newGroupPredictions;
       }
@@ -152,9 +152,13 @@ export default new Vuex.Store({
       state.players = players;
     },
 
-    clearUserData () {
-      localStorage.removeItem('token')
-      location.reload()
+    clearUserData (state) {
+      state.user = null;
+      state.token = null;
+      localStorage.removeItem('user');
+      localStorage.removeItem('token');
+      delete axios.defaults.headers.common.Authorization;
+      Router.push("/login");
     },
 
     groupPredictionsUpdated () {
@@ -178,8 +182,6 @@ export default new Vuex.Store({
         .post('/auth/login', credentials)
         .then(data => {
           commit('setToken', data.data.authToken)
-          this.$store.dispatch('getFixtures')
-          this.$store.dispatch('scoreUsers')
           dispatch('getCurrentUser')
         })
     },
