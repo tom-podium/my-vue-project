@@ -1,9 +1,9 @@
 <template>
-  <div>    
+  <div style="background: #143cdb">    
     <!--TO DO: Add countdown to entry deadline-->
     <HeroSection />
     <v-container>
-      <v-card color="#002c92" flat dark style="margin-top: 2%">
+      <v-card color="#002c92" flat dark style="margin-top: 2%;">
         <v-app-bar flat style="background: #002c92; border-bottom: 1px solid #fff">
           <strong>How It Works</strong>  
         </v-app-bar>

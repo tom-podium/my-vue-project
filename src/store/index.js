@@ -8,7 +8,7 @@ Vue.use(Vuex)
 
 axios.defaults.baseURL = "https://x8ki-letl-twmt.n7.xano.io/api:e7YHNPxg"
 
-console.log(process.env.VUE_APP_ROOT_API + 'here')
+/* console.log(process.env.VUE_APP_ROOT_API + 'here') */
 
 export default new Vuex.Store({
   state: {
@@ -61,6 +61,7 @@ export default new Vuex.Store({
 
     setFixtures(state, fixtures) {
       state.fixtures = fixtures;
+      console.log(fixtures)
     
       const today = moment().startOf('day'); // This ensures the comparison starts from the beginning of today.
     
@@ -87,7 +88,7 @@ export default new Vuex.Store({
       }).slice(0, 3); // Get only the last 3 fixtures
 
       // If groupPredictions doesn't exist or is an empty object, initialize it
-      if (!state.groupPredictions || Object.keys(state.groupPredictions).length === 0) {
+      if (!state.groupPredictions || Object.keys(state.groupPredictions).length == 0) {
         // Build the new groupPredictions object
         const newGroupPredictions = {};
         state.fixtures.forEach((fixture) => {
@@ -177,6 +178,8 @@ export default new Vuex.Store({
         .post('/auth/login', credentials)
         .then(data => {
           commit('setToken', data.data.authToken)
+          this.$store.dispatch('getFixtures')
+          this.$store.dispatch('scoreUsers')
           dispatch('getCurrentUser')
         })
     },

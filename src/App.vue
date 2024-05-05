@@ -10,7 +10,7 @@
         </router-link>
         <v-spacer></v-spacer>
         <v-spacer></v-spacer>
-        <div class="flex">
+        <div v-if="user" class="flex">
             <router-link to="/dashboard" class="menu-item ml-6">Home</router-link>
             <router-link to="/group-predictions" class="menu-item ml-6">Predictions</router-link>
             <router-link to="/leaderboard" class="menu-item ml-6">Leaderboard</router-link>
@@ -19,13 +19,13 @@
         <v-spacer></v-spacer>
 
         <div>
-            <div v-if="user" class="flex items-center">
+            <div v-if="user" class="flex">
                 <p>Hi, {{ user.name }}</p>
                 <v-btn color="#F4D03F" width="120px" @click="logout()" v-if="isLogged">
                     <span style="color: #333;">Logout</span>
                 </v-btn>
             </div>
-            <div v-else class="flex items-center">
+            <div v-else class="flex">
                 <router-link to="/login">Login</router-link>
                 <v-btn color="#F4D03F" width="120px">
                     <router-link to="/register" style="color: #333;" v-if="!isLogged">Register</router-link>
@@ -34,7 +34,7 @@
             </div>
         </div>
     </v-app-bar>
-    <v-app-bar flat color="#fff" height="60" dense>
+    <v-app-bar flat color="#fff" height="60" dense style="margin-bottom: 12px">
         <v-spacer></v-spacer>      
         <div
         v-for="team in teams"
@@ -51,7 +51,7 @@
     
 
     <v-footer class="footer" color="#143cdb">        
-        <img src="@/assets/images/footer-image.png"/>
+        <img src="@/assets/images/footer-image.png" width="100%"/>
     </v-footer>
   </div>
 </template>
@@ -73,20 +73,20 @@
         getImagePath(imageName) {
             return require('@/assets/images/' + imageName);
         },
-        scoreUsers() {
+        /* scoreUsers() {
             this.$store.dispatch('scoreUsers')
-        }
+        } */
     },
 
     created() {
         this.$store.dispatch('getTeams')
-        this.$store.dispatch('getFixtures')
+        /* this.$store.dispatch('getFixtures') */
         this.$store.dispatch('getPlayers')
     },
 
-    mounted: function() {
+    /* mounted: function() {
         this.scoreUsers();
-    }
+    } */
   }
 </script>
 
