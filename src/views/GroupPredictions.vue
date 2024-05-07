@@ -176,7 +176,7 @@
                 class="pl-2"
               >
                 <option
-                  v-for="player in players"
+                  v-for="player in filteredplayers(item.HomeTeam, item.AwayTeam)"
                   :key="player.id"
                 >
                   {{ player.Name }}
@@ -212,7 +212,7 @@
     }),
 
     computed: {
-      ...mapState(["user", "fixtures", "teams", "players"])
+      ...mapState(["user", "fixtures", "teams", "players"]),
     },
 
     methods: {
@@ -247,6 +247,10 @@
           userId: this.user.id,
           user: this.user
         });
+      },
+      filteredplayers (homeTeam, awayTeam) {
+        var filteredPlayers = this.players.filter(player => player.teams_id == homeTeam || player.teams_id == awayTeam)
+        return filteredPlayers
       }
     }
   }

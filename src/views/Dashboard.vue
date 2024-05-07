@@ -282,38 +282,231 @@
                 <v-col cols="12" md="4">
                     <v-card outlined>
                         <v-card-title>Group B</v-card-title>
+                        <v-simple-table>
+                            <template v-slot:default>
+                                <thead>
+                                    <tr>
+                                    <th class="text-center"></th>
+                                    <th class="text-center">
+                                        Played
+                                    </th>
+                                    <th class="text-center">
+                                        Won
+                                    </th>
+                                    <th class="text-center">
+                                        Drawn
+                                    </th>
+                                    <th class="text-center">
+                                        Lost
+                                    </th>
+                                    <th class="text-center">
+                                        Goal Difference
+                                    </th>
+                                    <th class="text-center">
+                                        <strong>Points</strong>
+                                    </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr
+                                    v-for="team in groupBteams"
+                                    :key="team.name"
+                                    >
+                                    <td>{{ team.Team_Name }}</td>
+                                    <td style="text-align:center">{{ team.Played }}</td>
+                                    <td style="text-align:center">{{ team.Won }}</td>
+                                    <td style="text-align:center">{{ team.Drawn }}</td>
+                                    <td style="text-align:center">{{ team.Lost }}</td>
+                                    <td style="text-align:center">{{ team.GoalDifference }}</td>
+                                    <td style="text-align:center"><strong>{{ team.Points }}</strong></td>
+                                    </tr>
+                                </tbody>
+                            </template>
+                        </v-simple-table>
                     </v-card>
                 </v-col>
                 <v-col cols="12" md="4">
                     <v-card outlined>
                         <v-card-title>Group C</v-card-title>
+                        <v-simple-table>
+                            <template v-slot:default>
+                                <thead>
+                                    <tr>
+                                    <th class="text-center"></th>
+                                    <th class="text-center">
+                                        Played
+                                    </th>
+                                    <th class="text-center">
+                                        Won
+                                    </th>
+                                    <th class="text-center">
+                                        Drawn
+                                    </th>
+                                    <th class="text-center">
+                                        Lost
+                                    </th>
+                                    <th class="text-center">
+                                        Goal Difference
+                                    </th>
+                                    <th class="text-center">
+                                        <strong>Points</strong>
+                                    </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr
+                                    v-for="team in groupCteams"
+                                    :key="team.name"
+                                    >
+                                    <td>{{ team.Team_Name }}</td>
+                                    <td style="text-align:center">{{ team.Played }}</td>
+                                    <td style="text-align:center">{{ team.Won }}</td>
+                                    <td style="text-align:center">{{ team.Drawn }}</td>
+                                    <td style="text-align:center">{{ team.Lost }}</td>
+                                    <td style="text-align:center">{{ team.GoalDifference }}</td>
+                                    <td style="text-align:center"><strong>{{ team.Points }}</strong></td>
+                                    </tr>
+                                </tbody>
+                            </template>
+                        </v-simple-table>
                     </v-card>
                 </v-col>
                 <v-col cols="12" md="4">
                     <v-card outlined>
                         <v-card-title>Group D</v-card-title>
+                        <v-simple-table>
+                            <template v-slot:default>
+                                <thead>
+                                    <tr>
+                                    <th class="text-center"></th>
+                                    <th class="text-center">
+                                        Played
+                                    </th>
+                                    <th class="text-center">
+                                        Won
+                                    </th>
+                                    <th class="text-center">
+                                        Drawn
+                                    </th>
+                                    <th class="text-center">
+                                        Lost
+                                    </th>
+                                    <th class="text-center">
+                                        Goal Difference
+                                    </th>
+                                    <th class="text-center">
+                                        <strong>Points</strong>
+                                    </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr
+                                    v-for="team in groupDteams"
+                                    :key="team.name"
+                                    >
+                                    <td>{{ team.Team_Name }}</td>
+                                    <td style="text-align:center">{{ team.Played }}</td>
+                                    <td style="text-align:center">{{ team.Won }}</td>
+                                    <td style="text-align:center">{{ team.Drawn }}</td>
+                                    <td style="text-align:center">{{ team.Lost }}</td>
+                                    <td style="text-align:center">{{ team.GoalDifference }}</td>
+                                    <td style="text-align:center"><strong>{{ team.Points }}</strong></td>
+                                    </tr>
+                                </tbody>
+                            </template>
+                        </v-simple-table>
                     </v-card>
                 </v-col>
-            </v-row>
-            <v-row>
                 <v-col cols="12" md="4">
                     <v-card outlined>
                         <v-card-title>Group E</v-card-title>
+                        <v-simple-table>
+                            <template v-slot:default>
+                                <thead>
+                                    <tr>
+                                    <th class="text-center"></th>
+                                    <th class="text-center">
+                                        Played
+                                    </th>
+                                    <th class="text-center">
+                                        Won
+                                    </th>
+                                    <th class="text-center">
+                                        Drawn
+                                    </th>
+                                    <th class="text-center">
+                                        Lost
+                                    </th>
+                                    <th class="text-center">
+                                        Goal Difference
+                                    </th>
+                                    <th class="text-center">
+                                        <strong>Points</strong>
+                                    </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr
+                                    v-for="team in groupEteams"
+                                    :key="team.name"
+                                    >
+                                    <td>{{ team.Team_Name }}</td>
+                                    <td style="text-align:center">{{ team.Played }}</td>
+                                    <td style="text-align:center">{{ team.Won }}</td>
+                                    <td style="text-align:center">{{ team.Drawn }}</td>
+                                    <td style="text-align:center">{{ team.Lost }}</td>
+                                    <td style="text-align:center">{{ team.GoalDifference }}</td>
+                                    <td style="text-align:center"><strong>{{ team.Points }}</strong></td>
+                                    </tr>
+                                </tbody>
+                            </template>
+                        </v-simple-table>
                     </v-card>
                 </v-col>
                 <v-col cols="12" md="4">
                     <v-card outlined>
                         <v-card-title>Group F</v-card-title>
-                    </v-card>
-                </v-col>
-                <v-col cols="12" md="4">
-                    <v-card outlined>
-                        <v-card-title>Group G</v-card-title>
-                    </v-card>
-                </v-col>
-                <v-col cols="12" md="4">
-                    <v-card outlined>
-                        <v-card-title>Group H</v-card-title>
+                        <v-simple-table>
+                            <template v-slot:default>
+                                <thead>
+                                    <tr>
+                                    <th class="text-center"></th>
+                                    <th class="text-center">
+                                        Played
+                                    </th>
+                                    <th class="text-center">
+                                        Won
+                                    </th>
+                                    <th class="text-center">
+                                        Drawn
+                                    </th>
+                                    <th class="text-center">
+                                        Lost
+                                    </th>
+                                    <th class="text-center">
+                                        Goal Difference
+                                    </th>
+                                    <th class="text-center">
+                                        <strong>Points</strong>
+                                    </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr
+                                    v-for="team in groupFteams"
+                                    :key="team.name"
+                                    >
+                                    <td>{{ team.Team_Name }}</td>
+                                    <td style="text-align:center">{{ team.Played }}</td>
+                                    <td style="text-align:center">{{ team.Won }}</td>
+                                    <td style="text-align:center">{{ team.Drawn }}</td>
+                                    <td style="text-align:center">{{ team.Lost }}</td>
+                                    <td style="text-align:center">{{ team.GoalDifference }}</td>
+                                    <td style="text-align:center"><strong>{{ team.Points }}</strong></td>
+                                    </tr>
+                                </tbody>
+                            </template>
+                        </v-simple-table>
                     </v-card>
                 </v-col>
             </v-row>
@@ -334,7 +527,7 @@
                 'user'
             ]),
 
-            ...mapState(["user", "users", "fixtures", "teams", "groupAteams", "upcomingFixtures", "recentResults", "deadline"]),
+            ...mapState(["user", "users", "fixtures", "teams", "groupAteams", "groupBteams", "groupCteams", "groupDteams", "groupEteams", "groupFteams", "upcomingFixtures", "recentResults", "deadline"]),
 
         },
         name: 'Project-Dashboard',

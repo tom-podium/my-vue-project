@@ -225,6 +225,7 @@ export default new Vuex.Store({
       commit('clearUserData')
     },
     updateUser ({ commit }, {route, userId, user}) {
+      console.log(user)
       axios.post(`/user/${userId}`, user)
         .then(response => {
           if(route == "groupPredictions"){
@@ -251,7 +252,7 @@ export default new Vuex.Store({
           // Scoring logic
           data.data.forEach(user => {
             let userScore = {
-              user_id: user.id,
+              id: user.id,
               GroupPredictionScore: 0,
               GroupOutrightScore: 0,
               TournamentOutrightScore: 0,
